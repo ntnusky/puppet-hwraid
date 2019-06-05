@@ -18,9 +18,12 @@ class hwraid::aptrepo
 
     # Currently there are no packages for Ubuntu 14.04 or Debian 8, so we need 
     # to adapt accordingly.
+    # LEP 05.06.19: Dirty hack to use xenial repo on bionic, since there is no
+    # packages for bionic at this given time.
     $release = $::lsbdistcodename ? {
         'trusty' => 'precise',
         'jessie' => 'wheezy',
+        'bionic' => 'xenial',
         default  => $::lsbdistcodename,
     }
 
