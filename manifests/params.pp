@@ -8,7 +8,7 @@ class hwraid::params {
     include ::os::params
 
     case $::osfamily {
-        'Debian': {
+        'Debian', 'RedHat': {
             # Generic settings
             $pid_dir = '/var/run'
 
