@@ -23,8 +23,7 @@ class hwraid::aptrepo
     $release = $::lsbdistcodename ? {
         'trusty' => 'precise',
         'jessie' => 'wheezy',
-        'bionic' => 'xenial',
-        'focal'  => 'xenial',
+        'jammy'  => 'focal',
         default  => $::lsbdistcodename,
     }
 
