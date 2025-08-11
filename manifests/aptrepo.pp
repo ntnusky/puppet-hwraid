@@ -24,7 +24,7 @@ class hwraid::aptrepo
         'trusty' => 'precise',
         'jessie' => 'wheezy',
         'jammy'  => 'focal',
-        'noble'  => 'focaø',
+        'noble'  => 'focal',
         default  => $::lsbdistcodename,
     }
 
