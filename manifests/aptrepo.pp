@@ -35,6 +35,7 @@ class hwraid::aptrepo
         release  => $release,
         repos    => 'main',
         key      => {'id'    => $key_id,
-                    'source' => 'http://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key' }
-        }
+                    'source' => 'http://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key' },
+        notify   => Exec['apt_update'],
+    }
 }
