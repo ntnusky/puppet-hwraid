@@ -9,7 +9,8 @@
 #
 class hwraid::aptrepo
 (
-    Enum['present','absent'] $ensure
+    Enum['present','absent'] $ensure,
+    String $key_id = '9B241597ACC8C086A363535E43676E103A9A6F7C'
 )
 {
     include ::apt
@@ -33,7 +34,7 @@ class hwraid::aptrepo
         location => "http://hwraid.le-vert.net/${distrib}",
         release  => $release,
         repos    => 'main',
-        key      => {'id'    => '0073C11919A641464163F7116005210E23B3D3B4',
+        key      => {'id'    => $key_id,
                     'source' => 'http://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key' }
         }
 }
