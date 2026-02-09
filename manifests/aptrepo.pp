@@ -10,7 +10,7 @@
 class hwraid::aptrepo
 (
     Enum['present','absent'] $ensure,
-    String $key_id = '9B241597ACC8C086A363535E43676E103A9A6F7C'
+    String $key_id = '0073C11919A641464163F7116005210E23B3D3B4'
 )
 {
     include ::apt
@@ -35,7 +35,7 @@ class hwraid::aptrepo
         release  => $release,
         repos    => 'main',
         key      => {'id'    => $key_id,
-                    'source' => 'http://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key' },
+                    'source' => 'http://hwraid.le-vert.net/ubuntu/hwraid.le-vert.net.gpg.key' },
         notify   => Exec['apt_update'],
     }
 }
